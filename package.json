@@ -1,0 +1,35 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "- [GMkonan](https://github.com/GMkonan)\r ### License",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GMkonan/MyBlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GMkonan/MyBlog/issues"
+  },
+  "homepage": "https://github.com/GMkonan/MyBlog#readme",
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.3",
+    "postcss": "^8.1.0",
+    "postcss-cli": "^8.3.0",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-markdown": "^5.0.3",
+    "tailwindcss": "^2.0.1"
+  }
+}
