@@ -2,6 +2,7 @@ import matter from 'gray-matter';
 import React from 'react';
 import Layout from '../components/Layout';
 import Link from "next/link";
+import Header from '../components/Header'
 
 const Home = ({title, description, data}) => {
     //map the data going to each file and getting the parts
@@ -11,7 +12,10 @@ const Home = ({title, description, data}) => {
     const ListItems = RealData.map((listItem) => listItem.data);
 
     return (
+        <div>
+            <Header />
             <Layout>
+                
                 <h1>{title}</h1>
                 <ul>
                     {ListItems.map((blog, i) => (
@@ -25,6 +29,7 @@ const Home = ({title, description, data}) => {
                     ))}
                 </ul>
             </Layout>
+            </div>
     )
 }
 
