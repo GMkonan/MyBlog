@@ -2,7 +2,7 @@ import matter from 'gray-matter';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { copyToClipboard } from '../utils/copy-to-clipboard';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
@@ -65,6 +65,9 @@ const Blog = ({ content, data }) => {
 };
 
 export default Blog;
+
+//getInitialProps is used to asynchronously fetch some data,
+// which then populates props
 
 Blog.getInitialProps = async (context) => {
     const { blog } = context.query;
