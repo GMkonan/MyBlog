@@ -1,6 +1,16 @@
-// pages/_app.js
+// _app.js
+import App from 'next/app'
+import { ThemeProvider } from 'styled-components'
 
-export default function MyApp({ Component, pageProps }) {
-  return 
-  <Component {...pageProps} />;
+const theme = {}
+
+export default class MyApp extends App {
+    render() {
+        const { Component, pageProps } = this.props
+        return (
+            <ThemeProvider theme={theme}>
+                <Component {...pageProps} />
+            </ThemeProvider>
+        )
+    }
 }
