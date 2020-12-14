@@ -3,6 +3,38 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Link from "next/link";
 import Header from '../components/Header'
+import styled from 'styled-components';
+
+const Articles = styled.div`
+    margin: 0 auto;
+    width: 800px;
+    border-left-width: 0.1rem;
+    border-right-width: 0.1rem;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-color: rgb(130, 141, 154, 0.4)
+`;
+
+const Title = styled.h1`
+    margin-left: 10px;
+`;
+
+const ArticTitle = styled.a`
+    font-size: 1.5rem;
+`;
+
+const List = styled.ul`
+    list-style-type:none;
+`;
+
+const Items = styled.li`
+    margin:0 0 20px 0;  
+`;
+
+const SpanDate = styled.span`
+    margin: 10px 0 0 0;
+    display: inline-block;
+`;
 
 const Home = ({title, description, data}) => {
     //map the data going to each file and getting the parts
@@ -15,19 +47,20 @@ const Home = ({title, description, data}) => {
         <div>
             <Header />
             <Layout>
-                
-                <h1>{title}</h1>
-                <ul>
+                <Articles>
+                <Title>{title}</Title>
+                <List >
                     {ListItems.map((blog, i) => (
-                        <li key={i}>
+                        <Items key={i}>
                             <Link href={`/${blog.slug}`}>
-                                <a>{blog.title}</a>
+                                <ArticTitle>{blog.title}</ArticTitle>
                             </Link>
-                            <p>{blog.description}</p>
-                            <span>{blog.date}</span>
-                        </li>
+                            <br />
+                            <SpanDate>{blog.date}</SpanDate>
+                        </Items>
                     ))}
-                </ul>
+                </List>
+                </Articles>
             </Layout>
             </div>
     )
@@ -55,7 +88,7 @@ export async function getStaticProps() {
         props: {
             data:data,
             title: siteData.default.title,
-            description: siteData.default.description,
+            //description: siteData.default.description,
         },
     };
 }

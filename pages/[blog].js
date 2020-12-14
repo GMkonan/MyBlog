@@ -7,19 +7,23 @@ import { copyToClipboard } from '../utils/copy-to-clipboard';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 
+const BlogLayout = styled.div`
+    margin: 0 auto;
+    width: 800px;
+`;
+
 const Card = styled.pre`
 text-align: left;
 margin: 1em 0;
 padding: 0.5em;
 overflow-x: auto;
 border-radius: 3px;
-
+position: relative;
 & .token-line {
   line-height: 1.3em;
   height: 1.3em;
 }
 font-family: 'Courier New', Courier, monospace;
-position: relative;
 `;
 
 const CopyCode = styled.button`
@@ -55,11 +59,11 @@ const Blog = ({ content, data }) => {
     const frontmatter = data;
     return (
         <Layout>
-    <div style={{margin: '0 auto', width: '800px'}}>
+    <BlogLayout>
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.description}</h3>
         <ReactMarkdown escapeHtml={true} source={content} renderers={{ code: CodeBlock }} />
-    </div>
+    </BlogLayout>
     </Layout>
     )
 };

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const NavBar = styled.nav`
-    background: #444;
+    background: #828d9a;
     width: auto;
     height: 60px;
     padding: 0 2rem;
@@ -13,10 +13,6 @@ const NavBar = styled.nav`
     margin: 0px;
   a {
     margin-right: 1rem;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
   }
 `;
 
@@ -24,11 +20,9 @@ const Header = () => {
 
     return(
         <NavBar>
-        <h1>Next'Blog</h1>
+        <h3>Konan</h3>
         <div>
-          <Link href='/'>
-            <a>Blog</a>
-          </Link>
+          {/* talvez botar os icones de redes sociais aqui*/}
           <Link href='/'>
             <a>About</a>
           </Link>

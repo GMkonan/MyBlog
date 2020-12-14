@@ -2,9 +2,10 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: #302d2d;
+    background-color: #2d3748;
     color: white;
     margin: 0px;
+    font-family: Sans-serif;
     };
   p{
       font-size: 1.1rem;
@@ -18,11 +19,11 @@ const GlobalStyle = createGlobalStyle`
   }
   a { /* maybe change to have this set to just some a tags */
     text-decoration: none;
-    font-size: 1.8rem;
     color: white;
   }
   a:hover {
       text-decoration: underline;
+      cursor: pointer;
   }
   
 `

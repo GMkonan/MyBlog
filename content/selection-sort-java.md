@@ -1,8 +1,7 @@
 ---
 slug: selection-sort-java
 title: Implementing Selection Sort in Java
-description: Selection Sort is a simple sorting algorithm...
-date: 11-December-2020
+date: 11.12.2020
 ---
 
 **Selection Sort** is a simple sorting algorithm. In this article we are gonna implement it using java to sort an array from smallest to largest element. We are gonna talk about it's **time complexity** too. Let's dive into it!
