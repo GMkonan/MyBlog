@@ -5,6 +5,13 @@ import Link from "next/link";
 import Header from '../components/Header'
 import styled from 'styled-components';
 
+const Presentation = styled.div`
+    margin: 0 auto;
+    width: 800px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+`;
+
 const Articles = styled.div`
     margin: 0 auto;
     width: 800px;
@@ -12,15 +19,26 @@ const Articles = styled.div`
     border-right-width: 0.1rem;
     border-left-style: solid;
     border-right-style: solid;
-    border-color: rgb(130, 141, 154, 0.4)
+    border-color: rgb(130, 141, 154, 0.4);
 `;
 
 const Title = styled.h1`
     margin-left: 10px;
+    margin: 0 auto;
+    width: 800px;
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+    border-color: rgb(130, 141, 154, 0.4);
 `;
 
+const Space = styled.p`
+    padding-top: 20px;
+    padding-bottom: 20px;
+`;
+
+
 const ArticTitle = styled.a`
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 `;
 
 const List = styled.ul`
@@ -47,8 +65,19 @@ const Home = ({title, description, data}) => {
         <div>
             <Header />
             <Layout>
-                <Articles>
+                <Presentation>
+                <h1>Hi There</h1>
+                <p>My name is Guilherme Monteiro Pereira, also known as Konan and I'm a Self-Learning Software Developer.
+<br /> <br />
+I have always had been really curious, researching ideas that interest me and that got me into programming.
+<br /> <br />
+I love the tech world and I'm always learning new things while working in projects.</p>
+
+                </Presentation>
                 <Title>{title}</Title>
+                <Space></Space>
+                <Articles>
+                
                 <List >
                     {ListItems.map((blog, i) => (
                         <Items key={i}>

@@ -6,6 +6,7 @@ import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { copyToClipboard } from '../utils/copy-to-clipboard';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
+import Header from '../components/Header';
 
 const BlogLayout = styled.div`
     margin: 0 auto;
@@ -59,6 +60,7 @@ const Blog = ({ content, data }) => {
     const frontmatter = data;
     return (
         <Layout>
+        <Header />
     <BlogLayout>
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.description}</h3>

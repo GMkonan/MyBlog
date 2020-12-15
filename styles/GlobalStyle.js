@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #2d3748;
     color: white;
     margin: 0px;
+    padding: 0px;
     font-family: Sans-serif;
     };
   p{
