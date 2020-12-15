@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const NavBar = styled.nav`
-    background: #828d9a;
+    background: #2d3748;
     width: auto;
     height: 60px;
     padding: 0 2rem;
@@ -11,6 +11,9 @@ const NavBar = styled.nav`
     align-items: center;
     font-size: 1rem;
     margin: 0px;
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+    border-color: rgb(130, 141, 154, 0.5);
   a {
     margin-right: 1rem;
   }

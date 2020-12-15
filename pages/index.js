@@ -12,6 +12,10 @@ const Presentation = styled.div`
     padding-bottom: 30px;
 `;
 
+const Text = styled.p`
+    font-size: 1.5rem;
+`;
+
 const Articles = styled.div`
     margin: 0 auto;
     width: 800px;
@@ -67,11 +71,13 @@ const Home = ({title, description, data}) => {
             <Layout>
                 <Presentation>
                 <h1>Hi There</h1>
-                <p>My name is Guilherme Monteiro Pereira, also known as Konan and I'm a Self-Learning Software Developer.
-<br /> <br />
-I have always had been really curious, researching ideas that interest me and that got me into programming.
-<br /> <br />
-I love the tech world and I'm always learning new things while working in projects.</p>
+                <Text>My name is Guilherme and you are in my Blog. I'm a self-learning software developer 
+                    that is passionate about
+                    the tech world in general.
+                    Here I will be addressing myself with my nickname,
+                    Konan, and I will be talking about all sorts of tech I'm interested in covering!
+                    From basic to advanced :) .
+                </Text>
 
                 </Presentation>
                 <Title>{title}</Title>
