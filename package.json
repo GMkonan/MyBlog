@@ -26,6 +26,7 @@
     "autoprefixer": "^10.1.0",
     "babel-plugin-styled-components": "^1.8.0",
     "bootstrap": "^4.5.3",
+    "fs": "0.0.1-security",
     "gray-matter": "^4.0.2",
     "netlify-cms-app": "^2.14.6",
     "next": "^10.0.3",
