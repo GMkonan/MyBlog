@@ -70,7 +70,7 @@ const Home = ({title, description, data}) => {
             <Header />
             <Layout>
                 <Presentation>
-                <h1>Hi There</h1>
+                <h1>Hi There.</h1>
                 <Text>My name is Guilherme and you are in my Blog. I'm a self-learning software developer 
                     that is passionate about
                     the tech world in general.

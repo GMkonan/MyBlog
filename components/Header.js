@@ -19,15 +19,29 @@ const NavBar = styled.nav`
   }
 `;
 
+const TitleHeader = styled.a`
+  font-size: 1.2rem;
+  text-decoration: none;
+  &:hover{
+    cursor: pointer;
+    text-decoration: none;
+  }
+  `;
+
 const Header = () => {
 
     return(
         <NavBar>
-        <h3>Konan</h3>
+          <Link href='/'>
+            <TitleHeader><b>Konan</b></TitleHeader>
+          </Link>
         <div>
           {/* talvez botar os icones de redes sociais aqui*/}
-          <Link href='/'>
-            <a>About</a>
+          <Link href='https://twitter.com/GuilhermeKonan'>
+            <a>Twitter</a>
+          </Link>
+          <Link href='https://github.com/GMkonan'>
+            <a>Github</a>
           </Link>
         </div>
         </NavBar>
