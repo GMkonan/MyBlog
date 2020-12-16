@@ -1,5 +1,5 @@
 import matter from 'gray-matter';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
 import Link from "next/link";
 import Header from '../components/Header'
@@ -64,6 +64,18 @@ const Home = ({title, description, data}) => {
     const RealData = data.map((blog) => matter(blog));
     //go to each of the "tags" that we got with matter and get data
     const ListItems = RealData.map((listItem) => listItem.data);
+
+    useEffect(()=>{
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", user => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      },[])
 
     return (
         <div>
