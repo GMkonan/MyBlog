@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Header from '../components/Header'
+import Layout from './../components/Layout';
+import Header from './../components/Header'
 import styled from 'styled-components';
 import Introduction from './../components/Introduction';
-import BlogList from '../components/BlogList';
+import BlogList from './../components/BlogList';
 
 const Title = styled.h1`
     margin-left: 10px;
