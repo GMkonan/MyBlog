@@ -12,7 +12,7 @@ const Text = styled.p`
     font-size: 1.5rem;
 `;
 
-const Introduction = () => {
+const QuickAboutMe = () => {
 
     return(
         <Presentation>
@@ -28,4 +28,4 @@ const Introduction = () => {
     )
 }
 
-export default Introduction;
+export default QuickAboutMe;
