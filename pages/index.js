@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './../components/Layout';
 import Header from './../components/Header'
 import styled from 'styled-components';
-import Introduction from './../components/Introduction';
+//import Introduction from './../components/Introduction';
 import BlogList from './../components/BlogList';
 
 const Title = styled.h1`
@@ -25,7 +25,7 @@ const Home = ({title, description, data}) => {
         <div>
             <Header />
             <Layout>
-                <Introduction />
+                {/*<Introduction /> */}
                 <Title>{title}</Title>
                 <Space></Space>
                 <BlogList data={data}/>
