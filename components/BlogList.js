@@ -50,6 +50,7 @@ const BlogList = ({ data }) => {
                             <br />
                             <SpanDate>{blog.date}</SpanDate>
                         </Items>
+                        
                     ))}
                 </List>
                 </Articles>
