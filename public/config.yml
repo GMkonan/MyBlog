@@ -1,7 +1,6 @@
 backend:
   name: github
   repo: GMkonan/MyBlog
-  api_root: https://api.github.com
 media_folder: public/img #images that are uploaded via Netlify Cms interface will be stored in this folder
 public_folder: img #I dont know
 collections:
