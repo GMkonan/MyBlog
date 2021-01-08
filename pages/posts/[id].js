@@ -1,12 +1,12 @@
-import matter from 'gray-matter';
+import axios from 'axios';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { copyToClipboard } from '../utils/copy-to-clipboard';
+import { copyToClipboard } from '../../utils/copy-to-clipboard';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
-import Header from '../components/Header';
+import Layout from '../../components/Layout';
+import Header from '../../components/Header';
 
 const BlogLayout = styled.div`
     margin: 0 auto;
@@ -56,15 +56,15 @@ const CodeBlock = ({ language, value }) => {
     );
 };
 
-const Blog = ({ content, data }) => {
-    const frontmatter = data;
+const Blog = ({ post }) => {
+    const frontmatter = post;
     return (
         <Layout>
         <Header />
     <BlogLayout>
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.description}</h3>
-        <ReactMarkdown escapeHtml={true} source={content} renderers={{ code: CodeBlock }} />
+        <ReactMarkdown escapeHtml={true} source={post.body_markdown} renderers={{ code: CodeBlock }} />
     </BlogLayout>
     </Layout>
     )
@@ -72,14 +72,20 @@ const Blog = ({ content, data }) => {
 
 export default Blog;
 
-//getInitialProps is used to asynchronously fetch some data,
-// which then populates props
-
-Blog.getInitialProps = async (context) => {
-    const { blog } = context.query;
-    
-    const content = await import(`../content/${blog}.md`);
-    const data = matter(content.default);
-
-    return { ...data };
-}
+export async function getServerSideProps(context) {
+    const { id } = context.query;
+    const post = await axios.get(`https://dev.to/api/articles/${id}`)
+      .then((res) => res.data)
+  
+    if (!post) {
+      return {
+        notFound: true,
+      }
+    }
+  
+    return {
+      props: {
+        post
+      },
+    }
+  }

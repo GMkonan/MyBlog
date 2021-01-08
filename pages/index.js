@@ -4,6 +4,7 @@ import Header from './../components/Header'
 import styled from 'styled-components';
 import QuickAboutMe from './../components/QuickAboutMe';
 import BlogList from './../components/BlogList';
+import axios from 'axios';
 
 const Title = styled.h1`
     margin-left: 10px;
@@ -19,16 +20,16 @@ const Space = styled.p`
     padding-bottom: 20px;
 `;
 
-const Home = ({title, description, data}) => {
+const Home = ({posts}) => {
 
     return (
         <div>
             <Header />
             <Layout>
                 <QuickAboutMe />
-                <Title>{title}</Title>
+                <Title>Articles</Title>
                 <Space></Space>
-                <BlogList data={data}/>
+                <BlogList posts={posts}/>
             </Layout>
             </div>
     )
@@ -36,27 +37,22 @@ const Home = ({title, description, data}) => {
 
 export default Home;
 
-export async function getStaticProps() {
-    const siteData = await import(`../config.json`)
-    const fs = require('fs');
-
-    const files = fs.readdirSync(`${process.cwd()}/content`, "utf-8");
-
-    const blogs = files.filter((fn) => fn.endsWith(".md"));
-
-    const data = blogs.map((blog) => {
-        const path = `${process.cwd()}/content/${blog}`;
-        const rawContent = fs.readFileSync(path, {
-            encoding:"utf-8",
-        });
-
-        return rawContent;
-    });
+export async function getServerSideProps() {
+    const posts = await axios.get('https://dev.to/api/articles', {
+      params: {
+        username: 'gmkonan'
+      }
+    }).then((res) => res.data)
+  
+    if (!posts) {
+      return {
+        notFound: true,
+      }
+    }
+  
     return {
-        props: {
-            data:data,
-            title: siteData.default.title,
-            //description: siteData.default.description,
-        },
-    };
-}
+      props: {
+        posts
+      },
+    }
+  }

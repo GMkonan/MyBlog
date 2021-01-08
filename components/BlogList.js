@@ -31,24 +31,19 @@ const SpanDate = styled.span`
 `;
 
 
-const BlogList = ({ data }) => {
-    //map the data going to each file and getting the parts
-    //between ---- with matter
-    const RealData = data.map((blog) => matter(blog));
-    //go to each of the "tags" that we got with matter and get data
-    const ListItems = RealData.map((listItem) => listItem.data);
+const BlogList = ({ posts }) => {
 
     return(
         <Articles>
                 
                 <List >
-                    {ListItems.map((blog, i) => (
-                        <Items key={i}>
-                            <Link href={`/${blog.slug}`}>
-                                <ArticTitle>{blog.title}</ArticTitle>
+                    {posts.map((post) => (
+                        <Items key={post.id}>
+                            <Link href={`/posts/${post.id}`}>
+                                <ArticTitle>{post.title}</ArticTitle>
                             </Link>
                             <br />
-                            <SpanDate>{blog.date}</SpanDate>
+                            <SpanDate>{new Date(post.readable_publish_date).toLocaleDateString()}</SpanDate>
                         </Items>
                         
                     ))}
