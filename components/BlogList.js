@@ -1,5 +1,4 @@
 import React from 'react';
-import matter from 'gray-matter';
 import Link from "next/link";
 import styled from 'styled-components';
 

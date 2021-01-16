@@ -10,7 +10,7 @@ import Header from '../../components/Header';
 
 const BlogLayout = styled.div`
     margin: 0 auto;
-    width: 800px;
+    width: 1000px;
 `;
 
 const Card = styled.pre`
@@ -40,6 +40,23 @@ const CopyCode = styled.button`
   }
 `;
 
+const Title = styled.h1`
+  font-size: 5rem;
+  font-family: system-ui;
+  font-weight: 900;
+`;
+
+const SpanDate = styled.span`
+  font-size: 1.6rem;
+  font-family: system-ui;
+  font-weight: 900;
+`;
+
+const Tags = styled.p`
+  margin-bottom: 5rem;
+  font-family: system-ui;
+  font-weight: 600;
+`;
 const CodeBlock = ({ language, value }) => {
 
     const handleClick = () => {
@@ -62,8 +79,12 @@ const Blog = ({ post }) => {
         <Layout>
         <Header />
     <BlogLayout>
-        <h1>{frontmatter.title}</h1>
-        <h3>{frontmatter.description}</h3>
+        <div style={{textAlign:"center"}}>
+          <Title>{frontmatter.title}</Title>
+          <SpanDate>{new Date(frontmatter.readable_publish_date).toLocaleDateString()}</SpanDate>
+          <Tags>{frontmatter.tags.map((tags) => `#${tags} `)}</Tags>
+        </div>
+        <hr />
         <ReactMarkdown escapeHtml={true} source={post.body_markdown} renderers={{ code: CodeBlock }} />
     </BlogLayout>
     </Layout>
