@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Presentation = styled.div`
     margin: 0 auto;
-    width: 800px;
+    width: 1000px;
     padding-top: 30px;
     padding-bottom: 30px;
 `;

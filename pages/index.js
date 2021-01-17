@@ -9,7 +9,7 @@ import axios from 'axios';
 const Title = styled.h1`
     margin-left: 10px;
     margin: 0 auto;
-    width: 800px;
+    width: 1000px;
     border-bottom-width: 0.1rem;
     border-bottom-style: solid;
     border-color: rgb(130, 141, 154, 0.4);

@@ -2,14 +2,16 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: #2d3748;
-    color: white;
+    background-color: #1A202C;
+    color: #dfe9f2;
     margin: 0px;
     padding: 0px;
-    font-family: Sans-serif;
+    font-family: sans-serif;
+    font-weight: 500;
     };
   p{
       font-size: 1.1rem;
+      line-height: 2.5rem;
   }
   img{
       display: block;
@@ -17,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
       font-size: 2.5rem;
+      color: white;
   }
   a { /* maybe change to have this set to just some a tags */
     text-decoration: none;

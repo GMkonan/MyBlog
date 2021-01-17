@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Articles = styled.div`
 margin: 0 auto;
-width: 800px;
+width: 1000px;
 border-left-width: 0.1rem;
 border-right-width: 0.1rem;
 border-left-style: solid;
@@ -14,6 +14,7 @@ border-color: rgb(130, 141, 154, 0.4);
 
 const ArticTitle = styled.a`
     font-size: 1.6rem;
+    color: #dfe9f2;
 `;
 
 const List = styled.ul`
@@ -38,7 +39,7 @@ const BlogList = ({ posts }) => {
                 <List >
                     {posts.map((post) => (
                         <Items key={post.id}>
-                            <Link href={`/posts/${post.id}`}>
+                            <Link href={`/posts/${post.id}`} passHref={true}>
                                 <ArticTitle>{post.title}</ArticTitle>
                             </Link>
                             <br />

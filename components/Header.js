@@ -2,15 +2,15 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const NavBar = styled.nav`
-    background: #2d3748;
-    width: auto;
+    background: #1A202C;
+    width: 1000px;
+    margin: 0 auto;
     height: 60px;
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1rem;
-    margin: 0px;
     border-bottom-width: 0.1rem;
     border-bottom-style: solid;
     border-color: rgb(130, 141, 154, 0.5);
@@ -32,7 +32,7 @@ const Header = () => {
 
     return(
         <NavBar>
-          <Link href='/'>
+          <Link href='/' passHref={true}>
             <TitleHeader><b>Konan</b></TitleHeader>
           </Link>
         <div>
