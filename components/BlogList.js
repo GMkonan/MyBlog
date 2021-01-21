@@ -10,11 +10,18 @@ border-right-width: 0.1rem;
 border-left-style: solid;
 border-right-style: solid;
 border-color: rgb(130, 141, 154, 0.4);
+@media(max-width: 800px) {
+    width: auto;
+  }
 `;
 
 const ArticTitle = styled.a`
     font-size: 1.6rem;
     color: #dfe9f2;
+    @media(max-width: 800px) {
+        font-size:  1.2rem;
+        width: auto;
+      }
 `;
 
 const List = styled.ul`

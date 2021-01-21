@@ -13,6 +13,9 @@ const Title = styled.h1`
     border-bottom-width: 0.1rem;
     border-bottom-style: solid;
     border-color: rgb(130, 141, 154, 0.4);
+    @media(max-width: 800px) {
+      width: auto;
+    }
 `;
 
 const Space = styled.p`

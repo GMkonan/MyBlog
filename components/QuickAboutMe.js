@@ -6,10 +6,18 @@ const Presentation = styled.div`
     width: 1000px;
     padding-top: 30px;
     padding-bottom: 30px;
+    @media(max-width: 800px) {
+        width: auto;
+      }
 `;
 
 const Text = styled.p`
-    font-size: 1.5rem;
+font-size: 1.5rem;
+@media(max-width: 800px) {
+    font-size:  1.2rem;
+    width: auto;
+    margin: 2%;
+  }
 `;
 
 const QuickAboutMe = () => {

@@ -17,6 +17,9 @@ const NavBar = styled.nav`
   a {
     margin-right: 1rem;
   }
+  @media(max-width: 800px) {
+    width: auto;
+  }
 `;
 
 const TitleHeader = styled.a`
