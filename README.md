@@ -9,3 +9,4 @@ Check out some of my articles :)
 
 - [Implementing Singly Linked Lists in Java](https://my-blog-vert.vercel.app/singly-linked-list-java)
 - [Implementing Selection Sort in Java](https://my-blog-vert.vercel.app/selection-sort-java)
+- [Implementing Binary Search in Java](https://dev.to/gmkonan/implementing-binary-search-in-java-489a)
