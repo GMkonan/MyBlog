@@ -50,7 +50,7 @@ const BlogList = ({ posts }) => {
                                 <ArticTitle>{post.title}</ArticTitle>
                             </Link>
                             <br />
-                            <SpanDate>{new Date(post.readable_publish_date).toLocaleDateString()}</SpanDate>
+                            <SpanDate>{new Date(post.published_at).toLocaleDateString()}</SpanDate>
                         </Items>
                         
                     ))}

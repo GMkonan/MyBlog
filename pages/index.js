@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import QuickAboutMe from './../components/QuickAboutMe';
 import BlogList from './../components/BlogList';
 import axios from 'axios';
-
+import { useRouter } from 'next/router';
+import {getPosts} from './api/index'
 const Title = styled.h1`
     margin-left: 10px;
     margin: 0 auto;
@@ -38,24 +39,10 @@ const Home = ({posts}) => {
     )
 }
 
-export default Home;
+Home.getInitialProps = async ({ req }) => {
+  const res = await getPosts()
+  const json = await res.json()
+  return { posts: json }
+}
 
-export async function getServerSideProps() {
-    const posts = await axios.get('https://dev.to/api/articles', {
-      params: {
-        username: 'gmkonan'
-      }
-    }).then((res) => res.data)
-  
-    if (!posts) {
-      return {
-        notFound: true,
-      }
-    }
-  
-    return {
-      props: {
-        posts
-      },
-    }
-  }
+export default Home;
