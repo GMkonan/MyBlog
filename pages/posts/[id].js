@@ -81,7 +81,7 @@ const Blog = ({ post }) => {
     <BlogLayout>
         <div style={{textAlign:"center"}}>
           <Title>{frontmatter.title}</Title>
-          <SpanDate>{new Date(frontmatter.readable_publish_date).toLocaleDateString()}</SpanDate>
+          <SpanDate>{new Date(frontmatter.published_at).toLocaleDateString()}</SpanDate>
           <Tags>{frontmatter.tags.map((tags) => `#${tags} `)}</Tags>
         </div>
         <hr />
