@@ -11,6 +11,9 @@ import Header from '../../components/Header';
 const BlogLayout = styled.div`
     margin: 0 auto;
     width: 1000px;
+    @media(max-width: 800px) {
+      width: auto;
+    }
 `;
 
 const Card = styled.pre`
@@ -44,6 +47,9 @@ const Title = styled.h1`
   font-size: 5rem;
   font-family: system-ui;
   font-weight: 900;
+  @media(max-width: 800px) {
+    font-size:  2.1rem;
+  }
 `;
 
 const SpanDate = styled.span`

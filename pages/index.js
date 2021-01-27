@@ -16,6 +16,8 @@ const Title = styled.h1`
     border-color: rgb(130, 141, 154, 0.4);
     @media(max-width: 800px) {
       width: auto;
+      margin-left: 10px;
+      margin-right: 10px;
     }
 `;
 

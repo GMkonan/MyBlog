@@ -30,6 +30,9 @@ const List = styled.ul`
 
 const Items = styled.li`
     margin:0 0 20px 0;  
+    @media(max-width: 800px) {
+        margin-left: -10px;
+      }
 `;
 
 const SpanDate = styled.span`

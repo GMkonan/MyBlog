@@ -16,6 +16,9 @@ const GlobalStyle = createGlobalStyle`
   img{
       display: block;
       margin: 0 auto;
+      @media(max-width: 800px) {
+        width: 100%;
+      }
   }
   h1 {
       font-size: 2.5rem;

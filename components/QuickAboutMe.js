@@ -8,6 +8,7 @@ const Presentation = styled.div`
     padding-bottom: 30px;
     @media(max-width: 800px) {
         width: auto;
+        margin-left: 10px;
       }
 `;
 
